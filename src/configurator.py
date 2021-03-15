@@ -1,6 +1,6 @@
 import os, json
 
-DEFAULT_DELETE_ATER =  -1
+DEFAULT_DELETE_ATER =  2629746
 
 
 class Configurator:

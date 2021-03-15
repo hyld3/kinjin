@@ -175,6 +175,8 @@ async def on_message(message):
                 for i in range(len(movelist)):
                     await bot_message.add_reaction(const.EMOJI_LIST[i])
 
+#	elif message.content == '!rant':
+#	    await channel.send(
         await bot.process_commands(message)
     except Exception as e:
         time_now = datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
