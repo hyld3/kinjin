@@ -119,16 +119,23 @@ async def on_message(message):
                 result = embed.error_embed(f'Character {original_name} does not exist.')
                 delete_after = 5
 
+            gif_val = None
+            for f in result.fields:
+                if 'Gif' in f.name:
+                    gif_val = f.value
             bot_message = await channel.send(embed=result, delete_after=delete_after)
+            if gif_val is not None:
+                await channel.send(gif_val)
             if embed.MOVE_NOT_FOUND_TITLE == bot_message.embeds[0].title:
                 content = bot_message.embeds[0].description.replace('\n', '\\n').split("\\n")
                 movelist = util.get_moves_from_content(content)
                 for i in range(len(movelist)):
                     await bot_message.add_reaction(const.EMOJI_LIST[i])
 
-        elif message.content == '!decide_my_fate':
-            n = random.randint(5,15)
-            await channel.send("> You need to get %s wins" % (str(n)))
+        elif message.content == '!roll' and len(message.content[1:].split(' ', 1)) > 2:
+            params = message.content[1:].split(' ', 1)
+            n = random.randint(params[0], params[1])
+            await channel.send("> Kinjin says: " % (str(n)))
         await bot.process_commands(message)
     except Exception as e:
         time_now = datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
