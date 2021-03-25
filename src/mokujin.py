@@ -97,6 +97,12 @@ async def on_message(message):
         elif message.content == '!help':
             await channel.send(embed=embed.help_embed())
 
+        elif message.content.startswith('!roll'):
+            params = message.content.split(' ')
+            print(params)
+            n = random.randint(int(params[1]), int(params[2]))
+            await channel.send("> Kinjin says: %s" % (str(n)))
+
         elif message.content.startswith('!') and len(message.content[1:].split(' ', 1)) > 1:
 
             delete_after = config.get_auto_delete_duration(channel.id)
@@ -132,10 +138,6 @@ async def on_message(message):
                 for i in range(len(movelist)):
                     await bot_message.add_reaction(const.EMOJI_LIST[i])
 
-        elif message.content == '!roll' and len(message.content[1:].split(' ', 1)) > 2:
-            params = message.content[1:].split(' ', 1)
-            n = random.randint(params[0], params[1])
-            await channel.send("> Kinjin says: " % (str(n)))
         await bot.process_commands(message)
     except Exception as e:
         time_now = datetime.datetime.now().strftime("%Y-%m-%d  %H:%M:%S")
