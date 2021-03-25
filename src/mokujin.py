@@ -6,6 +6,8 @@ import sys
 import configurator
 import random
 
+import discord
+
 sys.path.insert(1, (os.path.dirname(os.path.dirname(__file__))))
 from functools import reduce
 from discord.ext import commands
