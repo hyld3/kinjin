@@ -53,7 +53,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for e/info"))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="to hyld3 whining :3"))
 
 @bot.event
 async def on_reaction_add(reaction, user):
