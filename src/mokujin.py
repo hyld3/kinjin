@@ -51,6 +51,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
+    await bot.change_presence(activity=discord.ActivityType.playing, name="| I am hyld3's slave :(")
 
 @bot.event
 async def on_reaction_add(reaction, user):
