@@ -51,7 +51,7 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for e/info"))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for e/info"))
 
 @bot.event
 async def on_reaction_add(reaction, user):
