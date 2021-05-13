@@ -69,7 +69,13 @@ async def on_reaction_add(reaction, user):
             move = move_list[item_index]
 
             result = util.display_moves_by_input(character, move)
+            gif_val = None
+            for f in result.fields:
+                if 'Gif' in f.name:
+                    gif_val = f.value
             await reaction.message.channel.send(embed=result, delete_after=delete_after)
+            if gif_val is not None:
+                await reaction.message.channel.send(gif_val)
             await reaction.remove(bot.user)
 
 
