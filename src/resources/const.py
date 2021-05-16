@@ -3,7 +3,7 @@ CHARACTER_ALIAS = {
     'alisa': ['ali', 'als'],
     'anna': [],
     'armor_king': ['armorking', 'amk', 'ak'],
-    'asuka': ['asu'],
+    'asuka': ['asu', 'oscar'],
     'bob': [],
     'bryan': ['bry'],
     'claudio': ['cld', 'cla'],
