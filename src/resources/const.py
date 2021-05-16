@@ -27,7 +27,7 @@ CHARACTER_ALIAS = {
     'kuma': ['panda', 'karhu', 'bear'],
     'lars': ['lar'],
     'law': ['marshall'],
-    'lee': ['violet'],
+    'lee': ['violet', 'chaobla'],
     'lei': [],
     'leo': [],
     'lili': ['lil'],
