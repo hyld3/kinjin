@@ -777,7 +777,11 @@
         "Recovery": "-23",
         "Start up frame": "27~36a (27~) js9~"
     },
-    {
+    {      
+	"Alias": [
+            "Divekick",
+	    "divekick"
+        ],
         "Block frame": "-1~+6",
         "Command": "qcb+4",
         "Counter hit frame": "+9~+16s",
