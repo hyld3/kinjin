@@ -791,7 +791,8 @@
     },
     {
         "Alias": [
-            "instant divekick"
+            "instant divekick",
+	    "idk"
         ],
         "Block frame": "-2",
         "Command": "qcb,uf+4",
