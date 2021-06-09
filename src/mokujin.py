@@ -131,7 +131,7 @@ async def on_message(message):
 
                 print(all_chars)
             all_char_names = list(all_chars.keys())
-            await channel.send("> Your random character is: **" + random.choice(all_char_names) + "** :pogu:")
+            await channel.send("> Your random character is: **" + random.choice(all_char_names) + "**")
             
         # Find a move
         elif message.content.startswith('!') and len(message.content[1:].split(' ', 1)) > 1:
