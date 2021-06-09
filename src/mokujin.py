@@ -118,8 +118,9 @@ async def on_message(message):
 
             if len(message.content[1:].split(' ', 1)) > 1:
                 banned_chars = [s.replace(' ', '') for s in message.content[1:].split(' ', 1)[1:]][0].split(',')
-                print(banned_chars)
 
+                del all_chars["generic"]
+                
                 for i in banned_chars:
                     if i in all_chars:
                         del all_chars[i]
