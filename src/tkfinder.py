@@ -18,6 +18,10 @@ def load_characters_config():
     return chara_misc_json
 
 
+def get_character_list():
+    return const.CHARACTER_ALIAS
+
+
 def correct_character_name(alias: str):
     # check if input in dictionary or in dictionary values
     if alias in const.CHARACTER_ALIAS:

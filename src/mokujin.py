@@ -78,7 +78,7 @@ async def on_reaction_add(reaction, user):
                 await reaction.message.channel.send(gif_val)
             await reaction.remove(bot.user)
 
-
+            
 @bot.event
 async def on_message(message):
     """This has the main functionality of the bot. It has a lot of
@@ -112,6 +112,28 @@ async def on_message(message):
             n = random.randint(int(params[1]), int(params[2]))
             await channel.send("> Kinjin says: %s" % (str(n)))
 
+        
+        elif message.content.startswith('!random'):
+            all_chars = tkfinder.get_character_list()
+
+            if len(message.content[1:].split(' ', 1)) > 1:
+                banned_chars = [s.replace(' ', '') for s in message.content[1:].split(' ', 1)[1:]][0].split(',')
+                print(banned_chars)
+
+                for i in banned_chars:
+                    if i in all_chars:
+                        del all_chars[i]
+                    else:
+                        for k, v in all_chars.items():
+                            if i in v:
+                                del all_chars[k]
+                                continue
+
+                print(all_chars)
+            all_char_names = list(all_chars.keys())
+            await channel.send("> Your random character is: **" + random.choice(all_char_names) + "** :pogu:")
+            
+        # Find a move
         elif message.content.startswith('!') and len(message.content[1:].split(' ', 1)) > 1:
 
             delete_after = config.get_auto_delete_duration(channel.id)
